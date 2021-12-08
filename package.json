@@ -1,0 +1,17 @@
+{
+  "name": "proynode-051221",
+  "version": "1.0.0",
+  "description": "Practica Node 051221",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Julian DL",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-generator": "^4.2.0",
+    "nodemon": "^2.0.15"
+  }
+}
