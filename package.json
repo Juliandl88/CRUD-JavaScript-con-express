@@ -1,17 +1,16 @@
 {
   "name": "proynode-051221",
-  "version": "1.0.0",
-  "description": "Practica Node 051221",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node ./bin/www"
   },
-  "author": "Julian DL",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-generator": "^4.2.0",
-    "nodemon": "^2.0.15"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }
