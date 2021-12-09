@@ -1,34 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <title>Biblioteca</title>
-</head>
-<body>
+<%- include ../layouts/cabecera.ejs %> 
 
-    <table class="table">
+
+      <br>
+      <a class="btn btn-primary" href="/libros/crear">Crear un nuevo libro</a>
+      <br>
+      
+
+      <table class="table">
         <thead class="thead-light">
-            <tr>
-                <th>#</th>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Imagen</th>
-                <th>Acciones</th>
-            </tr>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td> - </td>
-                <td> - </td>
-                <td> - </td>
-                <td> - </td>
-                <td> Editar | Borrar </td>
-            </tr>
+          <% for( let libro = 0; libro < libros.length; libro++ ) { %>
+
+          <tr>
+            <td><%=libros[libro].id %></td>
+            <td><%=libros[libro].nombre %></td>
+            <td><%=libros[libro].imagen %></td>
+            <td>Editar | Borrar</td>
+          </tr>
+
+          <% } %>
         </tbody>
-    </table>
-    
-</body>
-</html>
+      </table>
+
+      <%- include ../layouts/pie.ejs %>
+
