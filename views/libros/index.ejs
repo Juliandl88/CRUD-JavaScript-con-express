@@ -1,12 +1,10 @@
 <%- include ../layouts/cabecera.ejs %> 
 
 
-      <br>
-      <a class="btn btn-primary" href="/libros/crear">Crear un nuevo libro</a>
-      <br>
+    
       
 
-      <table class="table">
+      <table class="table mt-5">
         <thead class="thead-light">
           <tr>
             <th>#</th>
@@ -20,14 +18,52 @@
 
           <tr>
             <td><%=libros[libro].id %></td>
+
             <td><%=libros[libro].nombre %></td>
-            <td><%=libros[libro].imagen %></td>
-            <td>Editar | Borrar</td>
+
+            <td>
+
+              <img src="images/<%=libros[libro].imagen %>" class="img-thumbnail" width="100" alt="">
+              
+            </td> 
+
+            <td>
+              
+            <div type="button" class="btn-group-vertical" role="group" aria-label="Vertical button group">
+
+              <form class="form-inline" method="post" action="/libros/editar/<%=libros[libro].id %>">
+               
+                <button type="submit" class="btn btn-warning">Editar</button>
+
+              </form>
+
+
+
+            </div>
+              
+              
+              <div type="button" class="btn-group-vertical" role="group" aria-label="Vertical button group">
+
+                <form class="form-inline" method="post" action="/libros/eliminar/<%=libros[libro].id %>">
+                 
+                  <button type="submit" class="btn btn-danger">Borrar</button>
+
+                </form>
+
+
+
+              </div>
+              
+            </td>
           </tr>
 
           <% } %>
         </tbody>
       </table>
+
+      <br>
+      <a class="btn btn-primary mb-5" href="/libros/crear">Crear un nuevo libro</a>
+      <br>
 
       <%- include ../layouts/pie.ejs %>
 
