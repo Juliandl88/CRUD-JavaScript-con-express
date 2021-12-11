@@ -10,6 +10,10 @@ module.exports = {
 
     retornarDatosID: function (conexion, id, funcion){
         conexion.query('SELECT * FROM libros WHERE id = ?', [id], funcion);
-    }
+    },
+
+    borrar: function (conexion, id, funcion){
+        conexion.query('DELETE FROM libros WHERE id = ?', [id], funcion);
+    },
 
 } 
