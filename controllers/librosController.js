@@ -51,12 +51,43 @@ module.exports = {
         libro: registros[0],
       });
 
-
     });
 
+  },
 
+  actualizar: function (req, res) {
+    console.log(req.body.nombre);
+    //console.log(req.file.filename);
 
+    if(req.file){
+      if(req.file.filename){
+        libro.retornarDatosID(conexion, req.body.id , function (err, registros) {     // Funcion para retornar datos de un libro
+          var nombreImagen = "public/images/" + (registros[0].imagen);
+    
+            if(borrar.existsSync(nombreImagen)){
+                borrar.unlinkSync(nombreImagen);
+            }
+    
+            libro.actualizarArchivo(conexion, req.body, req.file, function (err) {
+              
+            //res.redirect("/libros");
+    
+            });
+        });
+      }
+    }
+
+    if(req.body.nombre){
+    libro.actualizar(conexion, req.body, function (err) {
+    
+    });
+
+    res.redirect("/libros");
   }
+
+  
+
+},
 
 
 };

@@ -16,4 +16,11 @@ module.exports = {
         conexion.query('DELETE FROM libros WHERE id = ?', [id], funcion);
     },
 
+    actualizar: function (conexion, datos, funcion){
+        conexion.query('UPDATE libros SET nombre = ? WHERE id = ?', [datos.nombre, datos.id], funcion);
+    },
+    actualizarArchivo: function (conexion, datos, archivo, funcion){
+        conexion.query('UPDATE libros SET imagen = ? WHERE id = ?', [archivo.filename, datos.id], funcion);
+    },
+
 } 

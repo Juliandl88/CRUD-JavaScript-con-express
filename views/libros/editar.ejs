@@ -1,25 +1,43 @@
 <%- include ../layouts/cabecera.ejs %> 
+<br><br>
 
-<form method="post" action="/" enctype="multipart/form-data">
+<div class="card">
+    <div class="card-header">
+        Formulario de captura
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Editar datos del libro</h4>
+        <p class="card-text">
 
-    <input type="text" name="id" value="<%=libro.id%> ">
+            <form method="post" action="../actualizar/" enctype="multipart/form-data">
+
+                <input type="hidden" name="id" value="<%=libro.id%> ">
+            
+            
+            <div class="form-group">
+                <br>
+                <label for="titulo"> Nombre</label>
+                <input type="text" class="form-control" value="<%=libro.nombre%>" id="nombre" name="nombre" placeholder="Nombre">
+            
+            </div>
+            
+            <div class="form-group">
+              <label for=""></label>
+              <img class="img-thumbnail" src="../../images/<%=libro.imagen%>" width="100" alt="">
+              <input type="file" class="form-control-file" name="archivo" id="" placeholder="" aria-describedby="fileHelpId">
+            </div>
+            
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            <a class="btn btn-danger"  href="/libros">Cancelar</a>
+            
+            </form>
 
 
-<div class="form-group">
-    <br>
-    <label for="titulo"> Nombre</label>
-    <input type="text" class="form-control" value="<%=libro.nombre%>" id="nombre" name="nombre" placeholder="Nombre">
-
+        </p>
+    </div>
+   
 </div>
 
-<div class="form-group">
-  <label for="">Imagen</label>
-  <img class="img-thumbnail" src="../../images/<%=libro.imagen%>" width="100" alt="">
-  <input type="file" class="form-control-file" name="archivo" id="" placeholder="" aria-describedby="fileHelpId">
-</div>
 
-<button type="submit" class="btn btn-primary">Guardar</button>
-
-</form>
 
 <%- include ../layouts/pie.ejs %> 
