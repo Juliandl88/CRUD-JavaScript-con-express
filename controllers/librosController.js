@@ -30,7 +30,7 @@ module.exports = {
   eliminar: function (req, res) {               
     console.log("Recepción de datos para eliminar");
     console.log(req.params.id);
-    libro.retornarDatosID(conexion, req.params.id, function (err, registros) {
+    libro.retornarDatosID(conexion, req.params.id, function (err, registros) {     // Funcion para retornar datos de un libro
       var nombreImagen = "public/images/" + registros[0].imagen;
 
         if(borrar.existsSync(nombreImagen)){
@@ -42,5 +42,21 @@ module.exports = {
 
         });
     });
-}
+},
+
+  editar: function (req, res) {
+    libro.retornarDatosID(conexion, req.params.id, function (err, registros) { 
+      console.log(registros[0]); 
+      res.render("libros/editar", {
+        libro: registros[0],
+      });
+
+
+    });
+
+
+
+  }
+
+
 };
