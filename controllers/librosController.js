@@ -8,7 +8,7 @@ module.exports = {
       console.log(datos);
 
       res.render("libros/index", {
-        title: "Aplicación CRUD con NODE y EXPRESS",
+        title: "Aplicación CRUD - NODE y EXPRESS",
         libros: datos,
       });
     });
